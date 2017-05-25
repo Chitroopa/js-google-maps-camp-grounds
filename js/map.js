@@ -9,5 +9,14 @@ function Map(latitude, longitude) {
   });
 }
 
+Map.prototype.marker = function(latitude,longitude) {
+  var exactLocation = {lat: latitude, lng: longitude};
+  var marker = new google.maps.Marker({
+    position: exactLocation,
+    map: this.map
+  });
+};
+
+
 
 exports.googleModule = Map;
